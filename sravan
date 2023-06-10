@@ -1,1 +1,2 @@
+awk '{split($4, date, "T"); filename = $NF; gsub("\"", "", filename); print date[1], "-", filename}' http_logs.log https_logs.log | sort > log_summary.txt
 
